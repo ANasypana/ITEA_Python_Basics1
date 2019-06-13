@@ -1,11 +1,10 @@
-# Выводить буквы строки, до первой заглавной
+ # Выводить буквы строки, до первой заглавной
 
 if __name__=='__main__':
 
-    s ='tttpImmP'
+    s = 'tttpImmP'
 
     for i in s:
         if i.isupper():
             break
-        print(i, end='')
-        
+        print(i, end='')        
