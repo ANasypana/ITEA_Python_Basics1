@@ -6,8 +6,10 @@ def degree_of_number(a, n):
         s = s * a
     return s
 
+
 if __name__=='__main__':
 
     a = 2
     n = 3
-    print(degree_of_number(a,n))     
+    
+    print(degree_of_number(a,n))  
