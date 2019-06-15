@@ -3,6 +3,7 @@
 import string
 
 if __name__=='__main__':
+    
     temporary = ''
     array = []
     # print('Enter the list of words (through ','):')
@@ -17,9 +18,4 @@ if __name__=='__main__':
             temporary = ''
     array.append(temporary.strip(' '))
 
-    print(array)
-
-
-
-
-
+    print(array) 
