@@ -7,4 +7,4 @@ if __name__=='__main__':
     for i in s:
         if i.isupper():
             break
-        print(i, end='')        
+        print(i, end='') 
