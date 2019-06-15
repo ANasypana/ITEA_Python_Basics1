@@ -3,14 +3,11 @@
 if __name__=='__main__':
 
     print('Enter word: ')
-    w = str(input())
+    
+    word = str(input())
     j = 0
-    for i in w:
+    for i in word:
         if i == 'o' or i == 'O':
             j = j+1
 
-    print('Number of "o": ', j)
-
-
-
-
+    print('Number of "o": ', j) 
