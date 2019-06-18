@@ -9,4 +9,4 @@ if __name__=='__main__':
         if i == 'O':
             j = j+1
 
-    print('Number of "o": ', j)  
+    print('Number of "o": ', j) 
