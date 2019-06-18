@@ -1,4 +1,6 @@
+
 import copy
+
 
 def copy_array(l):
     result_copy = copy.copy(l)
@@ -6,7 +8,6 @@ def copy_array(l):
 
 
 if __name__=='__main__':
-
     array = [w*2 for w in 'python']
     dictionary = {a:a**2 for a in range(1, 6)}
 
