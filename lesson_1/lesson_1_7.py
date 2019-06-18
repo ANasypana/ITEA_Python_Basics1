@@ -16,4 +16,4 @@ if __name__=='__main__':
             temporary = ''
     array.append(temporary.strip(' '))
 
-    print(array)
+    print(array) 
