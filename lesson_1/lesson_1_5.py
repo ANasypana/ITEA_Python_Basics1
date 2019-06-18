@@ -7,4 +7,4 @@ if __name__=='__main__':
     first_digit = first_number[-1]
     second_digit = second_number[-1]
     result = int(first_digit)+int(second_digit)
-    print('Sum of the last digits: ', result)
+    print('Sum of the last digits: ', result) 
