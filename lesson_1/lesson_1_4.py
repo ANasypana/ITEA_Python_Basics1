@@ -29,4 +29,4 @@ if __name__=='__main__':
        sorted_array[index_min] = sorted_array[i]
        sorted_array[i] = tmp
 
-    print(sorted_array)
+    print(sorted_array)  
