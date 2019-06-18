@@ -1,16 +1,16 @@
 
 if __name__=='__main__':
     
-    side_rectangle_1 = 10
-    side_rectangle_2 = 20
+    hight_rectangle = 10
+    length_rectangle = 30
 
-    for i in range(side_rectangle_1):
-        if i == 0 or i == side_rectangle_1-1:
-            for j in range(side_rectangle_2):
+    for i in range(hight_rectangle):
+        if i == 0 or i == hight_rectangle - 1:
+            for j in range(length_rectangle):
                 print('*', end='')
         else:
             print('*', end='')
-            for j in range(1, side_rectangle_2-1):
+            for j in range(1, length_rectangle - 1):
                 print(' ', end='')
             print('*', end='')
         print()

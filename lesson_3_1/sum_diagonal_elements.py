@@ -1,5 +1,6 @@
 import random
 
+
 def sum_diagonal_elements(l):
     sum = 0
     column = len(l)
@@ -11,8 +12,11 @@ def sum_diagonal_elements(l):
     return sum
 
 
-def set_array (n, m, a = 0, b = 100):
-    l=[[0]*m for i in range(n)]
+def set_array(n, m, a = 0, b = 100):
+    l = []
+    for i in range(n):
+        l.append([(0) for j in range(m)])
+
     for i in range(n):
         for j in range(m):
             l[i][j] = random.randint(a, b)
@@ -20,10 +24,8 @@ def set_array (n, m, a = 0, b = 100):
 
 
 if __name__=='__main__':
-
     n = 4
     m = 5
-
     array = set_array(n, m)
 
     print(array)
