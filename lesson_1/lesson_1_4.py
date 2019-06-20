@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     for i in line:
         if i != ',':
-            temporary = temporary+i
+            temporary = temporary + i
         else:
             array.append(int(temporary.strip(' ')))
             temporary = ''
@@ -27,8 +27,4 @@ if __name__ == '__main__':
        array[index_min] = array[i]
        array[i] = tmp
 
-<<<<<<< HEAD
     print(array)
-=======
-    print(sorted_array)  
->>>>>>> 7f6936377cf62bf4f297893c7b2929436b5d6406
