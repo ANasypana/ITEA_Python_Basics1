@@ -23,4 +23,4 @@ def recursive_sorting(variety):
 
 if __name__ == '__main__':
     array = [1, 59, 3, 6, 78, 90, 4]
-    print(recursive_sorting(array))  
+    print(recursive_sorting(array))   
