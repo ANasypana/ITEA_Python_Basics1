@@ -158,7 +158,7 @@ def remove_by_substring(s, sub, start = 0, end = -1):
     return s_result
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     string = 'laaasaahjaaaanu'
     print(substitute_into_string(string, 'ccc', 'aaa'))
     print(break_up_string(string, 'aa'))
