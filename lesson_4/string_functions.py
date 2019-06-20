@@ -164,4 +164,4 @@ if __name__=='__main__':
     print(break_up_string(string, 'aa'))
     print(search_substring(string, 'an'))
     print(remove_by_index(string, 13))
-    print(remove_by_substring(string, 'la'))
+    print(remove_by_substring(string, 'la'))  
