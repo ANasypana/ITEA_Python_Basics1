@@ -56,4 +56,4 @@ if __name__=='__main__':
 
     print(insert_method(array, 1, 'rrr'))
     print(remove_method(array, 4))
-    print(remove_method(array, 'tt'))
+    print(remove_method(array, 'tt'))  
