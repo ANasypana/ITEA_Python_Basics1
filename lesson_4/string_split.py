@@ -13,7 +13,7 @@ def sum_of_column_elements(n, l):
         return None
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
 
     data = """
     0.00002640
