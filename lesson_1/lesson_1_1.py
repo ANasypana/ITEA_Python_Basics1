@@ -2,8 +2,4 @@
 
 if __name__ == '__main__':
 
-<<<<<<< HEAD:lesson_1/lesson_1_1.py
     print((2**128) * (3**128))
-=======
-    print((2**128)*(3**128)) 
->>>>>>> 7f6936377cf62bf4f297893c7b2929436b5d6406:lesson_1/lesson_1_1.py
