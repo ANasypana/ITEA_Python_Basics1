@@ -3,7 +3,7 @@
 import string
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     line = '3453, 6,89,999,7'
     temporary = ''
     array = []
@@ -15,18 +15,16 @@ if __name__=='__main__':
             array.append(int(temporary.strip(' ')))
             temporary = ''
     array.append(int(temporary.strip(' ')))
-    print(array)
 
-    sorted_array = array
-    length_array = len(sorted_array)
+    length_array = len(array)
 
     for i in range(length_array):
        index_min = i
        for j in range(i+1, length_array):
-          if sorted_array[j] < sorted_array[index_min]:
+          if array[j] < array[index_min]:
               index_min = j
-       tmp = sorted_array[index_min]
-       sorted_array[index_min] = sorted_array[i]
-       sorted_array[i] = tmp
+       tmp = array[index_min]
+       array[index_min] = array[i]
+       array[i] = tmp
 
-    print(sorted_array)
+    print(array)
