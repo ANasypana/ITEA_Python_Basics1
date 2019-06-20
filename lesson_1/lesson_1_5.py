@@ -15,10 +15,6 @@ if __name__ == '__main__':
 
     first_digit = first_number[-1]
     second_digit = second_number[-1]
-<<<<<<< HEAD
+    
     result = int(first_digit) + int(second_digit)
     print('Sum of the last digits: ', result)
-=======
-    result = int(first_digit)+int(second_digit)
-    print('Sum of the last digits: ', result) 
->>>>>>> 7f6936377cf62bf4f297893c7b2929436b5d6406
