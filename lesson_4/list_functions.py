@@ -51,7 +51,7 @@ def remove_method(variety, value):   # remove from the list
     return result_method
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     array = [0, 1, 2, 3, 4, 5, 6]
 
     print(insert_method(array, 1, 'rrr'))
