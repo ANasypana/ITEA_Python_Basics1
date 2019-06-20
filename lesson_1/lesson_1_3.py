@@ -7,6 +7,6 @@ if __name__ == '__main__':
 
     for i in word:
         if i == 'O':
-            j = j+1
+            j += 1
 
     print('Number of "o": ', j)
