@@ -42,4 +42,4 @@ if __name__=='__main__':
 
     print('Created array:\n', array)
     for i in range(3):
-        print('Sum of elements of {} column - '.format(i+1), sum_of_column_elements(i, array))
+        print('Sum of elements of {} column - '.format(i+1), sum_of_column_elements(i, array))  
