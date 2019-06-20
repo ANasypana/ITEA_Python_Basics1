@@ -25,4 +25,4 @@ if __name__ == '__main__':
     dictionary = dict(zip([1, 2, 3, 4], ['one', 'two', 'three', 'four']))
 
     print(remove_by_key(dictionary, 1))
-    print(remove_by_value(dictionary, 'two'))
+    print(remove_by_value(dictionary, 'two'))  
