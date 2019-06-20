@@ -27,4 +27,8 @@ if __name__ == '__main__':
        array[index_min] = array[i]
        array[i] = tmp
 
+<<<<<<< HEAD
     print(array)
+=======
+    print(sorted_array)  
+>>>>>>> 7f6936377cf62bf4f297893c7b2929436b5d6406

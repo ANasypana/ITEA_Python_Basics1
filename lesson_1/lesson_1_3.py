@@ -9,4 +9,8 @@ if __name__ == '__main__':
         if i == 'O':
             j = j+1
 
+<<<<<<< HEAD
     print('Number of "o": ', j)
+=======
+    print('Number of "o": ', j) 
+>>>>>>> 7f6936377cf62bf4f297893c7b2929436b5d6406
