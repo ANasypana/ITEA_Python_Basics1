@@ -36,4 +36,4 @@ if __name__=='__main__':
          n += 1
 
      print('The max length of chain of series 0 or 1 - ', max_length)
-     print('Max n - ', n)
+     print('Max n - ', n)  
