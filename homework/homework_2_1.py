@@ -1,6 +1,6 @@
 # Выводить буквы строки, до первой заглавной
 
-if __name__=='__main__':
+if __name__ == '__main__':
     s = 'tttpImmP'
 
     for i in s:
