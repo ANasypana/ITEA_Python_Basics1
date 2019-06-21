@@ -11,6 +11,6 @@ def print_reverse_digits(n):
         return print_reverse_digits(a)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     n = 2467
     print_reverse_digits(n)

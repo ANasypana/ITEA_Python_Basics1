@@ -3,7 +3,7 @@
 import random
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     entered_dates = input('Set the range (through ","):\n')
     entered_dates = entered_dates.replace(' ', '')
     diapason = entered_dates.split(",")

@@ -6,9 +6,9 @@ def power_2(n):
     elif n == 1:
         return 'Yes'
     else:
-        return power_2(n/2)
+        return power_2(n / 2)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     n = 12
     print(power_2(n))

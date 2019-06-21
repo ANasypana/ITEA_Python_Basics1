@@ -1,7 +1,12 @@
 # Найти сумму чисел числа 2 способами
 
-if __name__=='__main__':
+if __name__ == '__main__':
     number = input('Enter number:\n')
+    number = str(number)
+    while not number.isdigit():
+        number = input('Error! Try again. You must enter only number\n')
+        number = str(number)
+
     sum_of_first_method = 0
     sum_of_second_method = 0
 
@@ -10,7 +15,7 @@ if __name__=='__main__':
 
     length = len(number)
     for i in range(length):
-        sum_of_second_method += int(number)%(10**(i+1))//(10**i)
+        sum_of_second_method += int(number) % (10 ** (i+1)) // (10 ** i)
 
     print('Sum of first method: \n', sum_of_first_method)
     print('Sum of second method: \n', sum_of_second_method)
