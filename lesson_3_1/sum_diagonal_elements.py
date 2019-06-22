@@ -1,32 +1,31 @@
+# Найти сумму диагональных элементов матрицы
+
+
 import random
 
 
 def sum_diagonal_elements(l):
-    sum = 0
-    column = len(l)
-    row = len(l[0])
+    elements_sum = 0
+    row = len(l)
+    column = len(l[0])
     min_value = min(column, row)
 
     for i in range(min_value):
-        sum += l[i][i]
-    return sum
+        elements_sum += l[i][i]
+    return elements_sum
 
 
-def set_array(n, m, a = 0, b = 100):
+def set_array(number_row, number_col, a=0, b=100):
     l = []
-    for i in range(n):
-        l.append([(0) for j in range(m)])
-
-    for i in range(n):
-        for j in range(m):
-            l[i][j] = random.randint(a, b)
+    for i in range(number_row):
+        l.append([random.randint(a, b) for j in range(number_col)])
     return l
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     n = 4
     m = 5
     array = set_array(n, m)
 
     print(array)
-    print('Sum of diagonal items: ', sum_diagonal_elements(array))
+    print(f'Sum of diagonal items: {sum_diagonal_elements(array)}')

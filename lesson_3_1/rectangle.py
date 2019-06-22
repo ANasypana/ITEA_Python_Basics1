@@ -1,16 +1,16 @@
+# Вывести прямоугольник со сторонами a,b
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     
-    hight_rectangle = 10
+    height_rectangle = 10
     length_rectangle = 30
+    sign = '*'
+    first_pattern = sign*length_rectangle
+    second_pattern = sign + ' '*(length_rectangle - 2) + sign
 
-    for i in range(hight_rectangle):
-        if i == 0 or i == hight_rectangle - 1:
-            for j in range(length_rectangle):
-                print('*', end='')
+    for i in range(height_rectangle):
+        if i == 0 or i == (height_rectangle - 1):
+            print(first_pattern)
         else:
-            print('*', end='')
-            for j in range(1, length_rectangle - 1):
-                print(' ', end='')
-            print('*', end='')
-        print()
+            print(second_pattern)

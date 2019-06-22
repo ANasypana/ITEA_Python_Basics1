@@ -1,13 +1,11 @@
+# Найти сумму элементов матрицы
 
-def sum_elements(l):
-    sum = 0
-
-    for row in l:
-        for elem in row:
-            sum += int(elem)
-    return sum
-
-
-if __name__=='__main__':
+if __name__ == '__main__':
     array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    print(sum_elements(array))
+    row = len(array)
+    elements_sum = 0
+
+    for i in range(row):
+        elements_sum += sum(array[i])
+
+    print(f'Sum of elements of matrix  - {elements_sum}')
