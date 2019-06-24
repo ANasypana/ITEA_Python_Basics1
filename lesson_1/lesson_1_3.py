@@ -3,10 +3,6 @@
 if __name__ == '__main__':
     word = input('Enter word: \n')
     word = word.upper()
-    j = 0
+    quantity = word.count('O')
 
-    for i in word:
-        if i == 'O':
-            j += 1
-
-    print('Number of "o": ', j)
+    print(f'Number of "o" - {quantity}')
