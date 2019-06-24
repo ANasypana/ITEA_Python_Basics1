@@ -8,7 +8,7 @@ def check_number(n):
 
 
 if __name__ == '__main__':
-    elements_sum = 0
+    sum_elements = 0
     quantity = 0
     number = input('Enter number from 0 to 9:\n')
     check = 1
@@ -24,15 +24,15 @@ if __name__ == '__main__':
             else:
                 while number != 0:
                     quantity += 1
-                    elements_sum += number
+                    sum_elements += number
                     number = input('Enter number from 0 to 9:\n')
                     while not check_number(number):
                         number = input('Error! Enter number from 0 to 9:\n')
                     number = int(number)
 
-                print('Sum: \n', elements_sum)
+                print('Sum: \n', sum_elements)
                 print('Quantity: \n', quantity)
-                print('Mean: \n', elements_sum / quantity)
+                print('Mean: \n', sum_elements/ quantity)
                 check = 0
 
         else:

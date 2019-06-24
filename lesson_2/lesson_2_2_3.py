@@ -10,11 +10,11 @@ def composition_sin_cos(x):
 if __name__ == '__main__':
     x = input('Enter a function argument:\n')
     x = str(x)
-    x_check = x.replace('.', '')
-    while not x_check.isdigit():
+    check = x.replace('.', '')
+    while not check.isdigit():
         x = input('Error! Try again. Your must enter only number:\n')
         x = str(x)
-        x_check = x.replace('.', '')
+        check = x.replace('.', '')
     x = float(x)
 
     print(f'sin({x})*cos({x}) - ', composition_sin_cos(x))

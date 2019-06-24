@@ -2,14 +2,14 @@
 
 
 def mean_array(l):
-    elements_sum = 0
+    sum_elements = 0
     size = len(l)
     for i in l:
         if str(i).isdigit():
-            elements_sum += int(i)
+            sum_elements += int(i)
         else:
             return None
-    return float(elements_sum / size)
+    return float(sum_elements / size)
 
 
 if __name__ == '__main__':
