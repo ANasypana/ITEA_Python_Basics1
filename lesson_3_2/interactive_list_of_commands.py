@@ -1,174 +1,96 @@
-
-def add_to_dictionary(d):
-    name = input('Please, enter name:\n')
-
-    if d.get(name) is None:
-        phone_number = input('Enter phone number:\n')
-        d[name] = phone_number
-        print('Subscriber added')
-    else:
-        answer = input('This subscriber exists, number - {}. '
-                       'Would you like to change number (Y/N)\n'.format(d[name])).upper()
-        if answer == 'Y':
-            phone_number = input('Enter phone number:\n')
-            d[name] = phone_number
-            print('Phone number was changed')
+# Реализовать интерактивное меню с опциями выбора:
+#     добавление в справочник
+#     вывод номера телефона по имени
+#     вывод имени по номеру телефона
+#     удаления человека из справочника
+#     редактирования номера\имени
+# Посчитать количество номеров телефонов в предыдущем примере, в которых есть 3 или более одинаковых цифр подряд
 
 
-def remove_from_dictionary(d):
-    name = input('Enter name to remove:\n')
+from mydoc.dic_functions import (add_to_dictionary,
+                              select_by_name,
+                              select_by_phone,
+                              remove_from_dictionary,
+                              edit_contact,
+                              count_digits, )
 
-    if d.get(name) is None:
-        print('This subscriber does not exist')
-    else:
-        d.pop(name)
-        print('Subscriber deleted.')
-
-
-def edit_dictionary(d):
-    element_dictionary = input('Enter name or phone number:\n')
-
-    if element_dictionary in d.keys():
-        temporary_key = element_dictionary
-        temporary_values = d[temporary_key]
-        status_enter = 1
-    elif element_dictionary in d.values():
-        temporary_values = element_dictionary
-        status_enter = 1
-        for key, value in d.items():
-            if value == temporary_values:
-                temporary_key = key
-    else:
-        status_enter = 0
-        print('This subscriber does not exist')
-
-    if  status_enter == 1:
-        answer = input('Would you like to change:\n'
-                       '1 - name and phone number\n'
-                       '2 - phone number\n'
-                       '3 - name\n')
-        if  str(answer).isdigit() is False:
-            answer = input('Error! Try again. Your must choose one of: 1, 2 or 3\n')
-
-        elif int(answer) > 3 or int(answer) < 1:
-            answer = input('Error! Try again. Your must choose one of: 1, 2 or 3\n')
-
-        else:
-            if int(answer) == 1:
-                new_name = input('Enter new name:\n')
-                new_number = input('Enter new number:\n')
-                d.update([(new_name, new_number)])
-                d.pop(temporary_key)
-                print('Name and phone number were changed')
-            elif int(answer) == 2:
-                new_number = input('Enter new  phone number:\n')
-                d[temporary_key] = new_number
-                print('Phone number was changed')
-            elif int(answer) == 3:
-                new_name = input('Enter new name:\n')
-                d.update([(new_name, temporary_values)])
-                d.pop(temporary_key)
-                print('Name was changed')
+from mydoc.checking import (is_phone_number, is_name, )
 
 
-def select_elements(d):
-    answer = input('Would you like to search out:\n'
-                   '1 - name by phone number\n'
-                   '2 - phone number by name\n')
+if __name__ == '__main__':
 
-    if str(answer).isdigit() is False:
-        answer = input('Error! Try again. Your must choose one of: 1 or 2\n')
-
-    elif  int(answer) == 1:
-        phone_number = input('Enter phone number\n')
-        if phone_number in d.values():
-            for key, value in d.items():
-                if value == phone_number:
-                    name = key
-            print('{} has this number'.format(name))
-        else:
-            print('This subscriber does not exist')
-
-    elif int(answer) == 2:
-        name = input('Enter name\n')
-        if name in d.keys():
-            print('{} has phone number:'.format(name), d[name])
-        else:
-            print('This subscriber does not exist')
-
-    else:
-        print('Error! Try again. Your must choose one of: 1 or 2')
-
-
-def count_digits(d):
-    array = list(d.values())
-    result = []
-    temporary_list = []
-
-    for phone in array:
-        tem_phone = phone.replace(" ", "")
-        n = len(tem_phone)
-
-        for i in range(2, n):
-            if tem_phone[i] == tem_phone[i-1] and tem_phone[i-1] == tem_phone[i-2] and str(tem_phone[1]).isdigit():
-                temp = phone
-                for key, value in d.items():
-                    if value == temp:
-                        temporary_key = key
-                temporary_list.append(temporary_key)
-
-    for i in temporary_list:
-        if i not in result:
-            result.append(i)
-
-    return result             ##list of keys (values - %digitdigitdigit%)
-
-
-if __name__=='__main__':
     phone_book = dict([('Anna', '+067 780 33 33'),
                        ('James', '+050 235 09 67'),
                        ('John', '+095 106 89 53'),
                        ('Oliver', '+097 123 33 34'),
                        ('Dylan', '+067 890 33 67')])
 
+    function_dictionary = {
+        1: add_to_dictionary,
+        2: select_by_name,
+        3: select_by_phone,
+        4: remove_from_dictionary,
+        5: edit_contact,
+        6: -1}
+
     result_of_select = 0
 
     while result_of_select != -1:
-        print('Please, select what you want to do:\n',
-              '1 - add name and phone to phone book\n',
-              '2 - remove person from the phone book\n',
-              '3 - redact name and phone\n',
-              '4 - select phone by name or name by phone\n'
-              ' 5 - exit\n')
-        result_of_select = input()
+        result_of_select = input('Please, select what you want to do:\n'
+                                 '1 - add name and phone to phone book\n'
+                                 '2 - select phone by name\n'
+                                 '3 - select name by phone number\n'
+                                 '4 - remove person from the phone book\n'
+                                 '5 - redact contact (phone number) \n'
+                                 '6 - exit\n')
 
-        if not str(result_of_select).isdigit():
-            print('Error! Try again. Your must choose one of: 1, 2, 3, 4 or 5')
-            result_of_select = input(' ')
+        if str(result_of_select).isdigit() and (int(result_of_select) in function_dictionary.keys()):
+            result_of_select = int(result_of_select)
+            if result_of_select in [1, 5]:
+                name = input('Enter name:\n')
+                while not is_name(name):
+                    name = str(input('Error input. Enter only name:\n'))
 
-        if int(result_of_select) == 1:
-            add_to_dictionary(phone_book)
+                phone_number = input('Enter phone number:\n')
+                while not is_phone_number(phone_number):
+                    phone_number = str(input('Error input. Enter only  phone number:\n'))
 
-        elif int(result_of_select) == 2:
-            remove_from_dictionary(phone_book)
+                option = function_dictionary[result_of_select]
+                print(option(phone_book, name, phone_number))
 
-        elif int(result_of_select) == 3:
-            edit_dictionary(phone_book)
+            elif result_of_select in [2, 4]:
+                name = input('Enter name:\n')
+                while not is_name(name):
+                    name = input('Error input. Enter only name:\n')
 
-        elif int(result_of_select) == 4:
-            select_elements(phone_book)
+                option = function_dictionary[result_of_select]
+                print(option(phone_book, name))
 
-        elif int(result_of_select) == 5:
-            result_of_select = -1
+            elif result_of_select == 3:
+                phone_number = input('Enter phone number:\n')
+                while not is_phone_number(phone_number):
+                    phone_number = input('Error input. Enter only  phone number:\n')
+
+                option = function_dictionary[result_of_select]
+                print(option(phone_book, phone_number))
+
+            else:
+                result_of_select = -1
+                print('Thank you:)\n')
 
         else:
-            print('Error! Try again. Your must choose one of: 1, 2, 3, 4 or 5')
+            answer = input('Error!  Your must choose one of: 1, 2, 3, 4, 5 or 6\n'
+                           'Would you like to continue? (Y/N)\n')
+            answer = str(answer).upper()
+            if answer == 'Y':
+                result_of_select = 0
+            else:
+                result_of_select = -1
+                print('Thank you:)\n')
 
-    print('Thank you!\n')
+    quantity = len(count_digits(phone_book))
+    name_array = count_digits(phone_book)
+    print(f'There is/are {quantity} phone number with 3 or more identical digits')
 
-    amount_phone = len(count_digits(phone_book))
-    tem_array = count_digits(phone_book)
-    print('There is/are {} phone number with 3 or more identical digits'.format(amount_phone))
-
-    for name in tem_array:
+    for name in name_array:
         print(name, '- ', phone_book[name])
