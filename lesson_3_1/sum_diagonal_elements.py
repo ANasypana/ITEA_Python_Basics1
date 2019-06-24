@@ -5,14 +5,14 @@ import random
 
 
 def sum_diagonal_elements(l):
-    elements_sum = 0
+    sum_elements = 0
     row = len(l)
     column = len(l[0])
     min_value = min(column, row)
 
     for i in range(min_value):
-        elements_sum += l[i][i]
-    return elements_sum
+        sum_elements += l[i][i]
+    return sum_elements
 
 
 def set_array(number_row, number_col, a=0, b=100):

@@ -5,18 +5,18 @@ import random
 
 
 def sum_upper_elements(l):
-    elements_sum = 0
+    sum_elements = 0
     row = len(l)
     column = len(l[0])
 
     if column > row:
         for i in range(row):
-            elements_sum += sum(l[i][i + 1:])
+            sum_elements += sum(l[i][i + 1:])
     else:
-        for i in range(row - 1):
-            elements_sum += sum(l[i][i + 1:])
+        for i in range(column - 1):
+            sum_elements += sum(l[i][i + 1:])
 
-    return elements_sum
+    return sum_elements
 
 
 def set_array(number_row, number_col, a=0, b=100):
