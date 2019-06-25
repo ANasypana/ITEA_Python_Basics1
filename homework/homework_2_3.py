@@ -11,5 +11,4 @@ if __name__ == '__main__':
     a = 2
     n = 3
     
-    print(f'{a}^{n} - ', degree_of_number(a, n))
-    
+    print(f'{a}^{n} - ', degree_of_number(a, n))    
