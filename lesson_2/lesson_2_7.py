@@ -1,5 +1,6 @@
 # Ввод цифр с клавиатуры до 0
-#Показать: количество чисел, которые были Введены; их общую сумму; среднее арифметическое
+# Показать: количество чисел, которые были Введены; их общую сумму; среднее арифметическое
+
 
 def check_number(n):
     str_number = str(n)
@@ -15,7 +16,7 @@ if __name__ == '__main__':
 
     while check == 1:
 
-        if check_number(number):  #validation  enter
+        if check_number(number):                        #validation  enter
             number = int(number)
             if number == 0:
                 print('Your number is null')
@@ -30,9 +31,9 @@ if __name__ == '__main__':
                         number = input('Error! Enter number from 0 to 9:\n')
                     number = int(number)
 
-                print('Sum: \n', sum_elements)
-                print('Quantity: \n', quantity)
-                print('Mean: \n', sum_elements/ quantity)
+                print(f'Sum: \n {sum_elements}')
+                print(f'Quantity: \n {quantity}')
+                print(f'Mean: \n {sum_elements / quantity}')
                 check = 0
 
         else:

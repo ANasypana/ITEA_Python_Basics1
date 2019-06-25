@@ -11,6 +11,6 @@ if __name__ == '__main__':
     series = [1, 1]
 
     for i in range(2, number):
-        series.append(series[i-2] + series[i-1])
+        series.append(series[i - 2] + series[i - 1])
 
-    print('Fibonacci numbers: ', series)
+    print(f'Fibonacci numbers:\n {series}')

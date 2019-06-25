@@ -15,5 +15,11 @@ def mean_array(l):
 if __name__ == '__main__':
     array = [22, 56, 89, 234, 7, 89]
 
-    print(array)
-    print('Result of mean_array:\n', round(mean_array(array), 2))
+    checking_string = ''
+    for i in array:
+        checking_string += str(i)
+    if checking_string.isdigit():
+        print(array)
+        print(f'Result of mean_array: {round(mean_array(array), 2)}')
+    else:
+        print('Incorrect data in list.')
