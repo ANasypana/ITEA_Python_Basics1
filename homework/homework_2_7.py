@@ -9,10 +9,8 @@ if __name__ == '__main__':
 
     while x != imagined_number:
         x = input('Enter number from o to 10: \n')
-        x = str(x)
         while not x.isdigit():
             x = input('Error! Try again. You must enter number from o to 10:\n')
-            x = str(x)
         x = int(x)
 
         if x == imagined_number:
