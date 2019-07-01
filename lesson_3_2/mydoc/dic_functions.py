@@ -1,5 +1,7 @@
 # dictionary functions
 
+from mydoc.checking import (transfer_phone, )
+
 
 def add_to_dictionary(d, name, phone_number):
     if name in d.keys():
@@ -19,22 +21,13 @@ def select_by_name(d, name):
 def select_by_phone(d, phone_number):
     temporary_d = {}
     for key in d.keys():
-        temporary_value = d[key]
-        temporary_value = str(temporary_value)
-        if temporary_value[0] == '+':
-            temporary_value = temporary_value[1:]
-        temporary_value = temporary_value.replace(' ', '')
+        temporary_value = transfer_phone(d[key])
         temporary_d[key] = temporary_value
 
-    phone_number = str(phone_number)
-    if phone_number[0] == '+':
-        phone_number = phone_number[1:]
-    phone_number = phone_number.replace(' ', '')
-
-    if phone_number in temporary_d.values():
+    if transfer_phone(phone_number) in temporary_d.values():
         list_of_subscribers = []
         for key, value in temporary_d.items():
-            if value == phone_number:
+            if value == transfer_phone(phone_number):
                 name = key
                 list_of_subscribers.append(name)
         for i in list_of_subscribers:
@@ -80,4 +73,4 @@ def count_digits(d):
         if i not in result:
             result.append(i)
 
-    return result             ##list of keys (values - %digitdigitdigit%)
+    return result             ##list of keys

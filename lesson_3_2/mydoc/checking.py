@@ -1,11 +1,18 @@
 # checking functions
 
 
+def transfer_phone(number):
+    number = str(number)
+    if number.startswith('+'):
+        transfer_number = number[1:].replace(' ', '')
+    else:
+        transfer_number = number.replace(' ', '')
+    return transfer_number
+
+
 def is_phone_number(number):
-    str_number = str(number)
-    check_number = str_number.replace(' ', '')
-    check_condition = check_number.isdigit() or (check_number[0] == '+' and check_number[1:].isdigit())
-    if check_condition:
+    str_number = str(transfer_phone(number))
+    if str_number.isdigit():
         return True
     else:
         return False

@@ -1,11 +1,10 @@
-# Реализовать интерактивное меню с опциями выбора:
-#     добавление в справочник
-#     вывод номера телефона по имени
-#     вывод имени по номеру телефона
-#     удаления человека из справочника
-#     редактирования номера\имени
-# Посчитать количество номеров телефонов в предыдущем примере, в которых есть 3 или более одинаковых цифр подряд
-
+'''Реализовать интерактивное меню с опциями выбора:
+    добавление в справочник
+    вывод номера телефона по имени
+    вывод имени по номеру телефона
+    удаления человека из справочника
+    редактирования номера\имени
+Посчитать количество номеров телефонов в предыдущем примере, в которых есть 3 или более одинаковых цифр подряд'''
 
 from mydoc.dic_functions import (add_to_dictionary,
                               select_by_name,
@@ -14,7 +13,8 @@ from mydoc.dic_functions import (add_to_dictionary,
                               edit_contact,
                               count_digits, )
 
-from mydoc.checking import (is_phone_number, is_name, )
+from mydoc.checking import (is_phone_number,
+                            is_name, )
 
 
 if __name__ == '__main__':
@@ -31,7 +31,8 @@ if __name__ == '__main__':
         3: select_by_phone,
         4: remove_from_dictionary,
         5: edit_contact,
-        6: -1}
+        6: -1
+    }
 
     result_of_select = 0
 
@@ -93,4 +94,4 @@ if __name__ == '__main__':
     print(f'There is/are {quantity} phone number with 3 or more identical digits')
 
     for name in name_array:
-        print(name, '- ', phone_book[name])
+        print(f'{name}: {phone_book[name]}')
