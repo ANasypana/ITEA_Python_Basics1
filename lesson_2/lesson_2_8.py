@@ -1,11 +1,10 @@
 # Найти сумму чисел числа 2 способами
 
+from mydoc.subsidiary_functions import (enter_positive_number, )
+
+
 if __name__ == '__main__':
-    number = input('Enter number:\n')
-    number = str(number)
-    while not number.isdigit():
-        number = input('Error! Try again. You must enter only number\n')
-        number = str(number)
+    number = str(enter_positive_number('positive number'))
 
     sum_of_first_method = 0
     sum_of_second_method = 0

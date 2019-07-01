@@ -5,15 +5,12 @@ def mean_array(l):
     sum_elements = 0
     size = len(l)
     for i in l:
-        if str(i).isdigit():
-            sum_elements += int(i)
-        else:
-            return None
+        sum_elements += int(i)
     return float(sum_elements / size)
 
 
 if __name__ == '__main__':
-    array = [22, 56, 89, 234, 7, 89]
+    array = [22, 90, 89, 234, 7, 89]
 
     checking_string = ''
     for i in array:

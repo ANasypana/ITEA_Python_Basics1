@@ -1,16 +1,15 @@
 # Вывести n чисел фибоначчи
 
-if __name__ == '__main__':
-    number = input('Enter n:\n')
-    number = str(number)
-    while not number.isdigit():
-        number = input('Error! Try again. You must enter only number n:\n')
-        number = str(number)
-    number = int(number)
+from mydoc.subsidiary_functions import (enter_positive_number, )
 
+
+if __name__ == '__main__':
+    number = enter_positive_number('positive number')
     series = [1, 1]
 
-    for i in range(2, number):
-        series.append(series[i - 2] + series[i - 1])
-
-    print(f'Fibonacci numbers:\n {series}')
+    if number >= 2:
+        for i in range(2, number):
+            series.append(series[i - 2] + series[i - 1])
+        print(f'Fibonacci numbers:\n {series}')
+    else:
+        print(f'Fibonacci numbers:\n {series[0]}')
