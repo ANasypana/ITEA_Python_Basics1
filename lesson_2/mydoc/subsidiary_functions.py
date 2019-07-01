@@ -43,5 +43,3 @@ def enter_list_of_numbers(query):
         check = check.replace(' ', '')
     array = list_of_data.split(",")
     return array
-
-
