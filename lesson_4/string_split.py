@@ -1,13 +1,13 @@
 # Разбить строку "data" на группы по 3 числа и посчитать суммы каждого первого, второго и третьего
 
 
-def sum_of_column_elements(n, l):
+def sum_of_column_elements(column_number, l):
     row = len(l)
     column = len(l[0])
     sum_elements = 0
-    if n <= column:
+    if column_number <= column:
         for i in range(row):
-            sum_elements += l[i][n]
+            sum_elements += l[i][column_number]
         return sum_elements
     else:
         return None
@@ -35,11 +35,11 @@ if __name__ == '__main__':
     temporary_str = data.split("\n    ")
     temporary_str = temporary_str[1:-1]
     array = []
+    n = len(temporary_str) // 3
 
-    for i in range(5):
-       array.append([float(temporary_str[3*i+j]) for j in range(3)])
-    array = list(array)
+    for i in range(n):
+       array.append([float(temporary_str[3 * i + j]) for j in range(3)])
 
-    print('Created array:\n', array)
+    print(f'Created array:\n{array}')
     for i in range(3):
-        print('Sum of elements of {} column - '.format(i+1), sum_of_column_elements(i, array))  
+        print(f'Sum of elements of {i + 1} column - {sum_of_column_elements(i, array)}')

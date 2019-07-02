@@ -2,77 +2,56 @@
 # Напишите функцию remove по индексу и по подстроке.
 
 
-def substitute_into_string(s, new, old, count = -1):    #string.replace
+def string_replace(s, new, old, count=-1):
     length_string = len(s)
     length_old = len(old)
     s_result = ''
     i = 0
-    delta = length_string - length_old + 1
 
-    if count >= 0:
-        while i <= delta:
-            if (s[i:i+length_old] == old) and count > 0:
-                s_result += new
-                i += length_old
-                count -= 1
-            else:
-                s_result += s[i]
-                i += 1
-        return s_result
-    else:
-        while i <= delta:
-            if s[i:i+length_old] == old:
-                s_result += new
-                i += length_old
-            else:
-                s_result += s[i]
-                i += 1
-        return s_result
+    if count < 0:
+        count = length_string
+
+    while i < length_string:
+        if (s[i:i + length_old] == old) and count > 0:
+            s_result += new
+            i += length_old
+            count -= 1
+        else:
+            s_result += s[i]
+            i += 1
+    return s_result
 
 
-def break_up_string(s, separator = ' ',  count = -1):    #string.split
+def string_split(s, separator=' ',  count=-1):
     length_string = len(s)
     length_sep = len(separator)
     array = []
     i = 0
 
-    if count >= 0:
-        while (length_string > length_sep) and count > 0:
-            if s[i:i+length_sep] == separator:
-                array.append(s[0:i])
-                s = s[i+length_sep:]
-                length_string = len(s)
-                count -= 1
-                i == 0
-            else:
-                i += 1
-        if count == 0:
-            array.append(s)
-        elif count > 0:
-            if s[0:length_sep] == separator:
-                array.append('')
-                array.append(s[length_sep:])
-            else:
-                array.append(s)
-        return array
-    else:
-        while length_string > length_sep:
-            if s[i:i + length_sep] == separator:
-                array.append(s[0:i])
-                s = s[i + length_sep:]
-                length_string = len(s)
-                i = 0
-            else:
-                i += 1
+    if count < 0:
+        count = length_string
+
+    while (length_string > length_sep) and count > 0:
+        if s[i:i + length_sep] == separator:
+            array.append(s[0:i])
+            s = s[i + length_sep:]
+            length_string = len(s)
+            count -= 1
+            i = 0
+        else:
+            i += 1
+    if count == 0:
+        array.append(s)
+    elif count > 0:
         if s[0:length_sep] == separator:
             array.append('')
             array.append(s[length_sep:])
         else:
             array.append(s)
-        return array
+    return array
 
 
-def search_substring(s, sub, start = 0, end = -1):   #string.find
+def string_find(s, sub, start=0, end=-1):
     length_string = len(s)
     length_sub = len(sub)
 
@@ -84,7 +63,7 @@ def search_substring(s, sub, start = 0, end = -1):   #string.find
     if abs(start) > length_string:
         return -1
     elif start < 0:
-        start = length_string +start
+        start += length_string
 
     if start > end:
         return -1
@@ -93,9 +72,9 @@ def search_substring(s, sub, start = 0, end = -1):   #string.find
     find_index = -1
 
     while i <= end:
-        if s[i:i+length_sub] == sub:
+        if s[i:i + length_sub] == sub:
             find_index = i
-            i = end +1
+            i = end + 1
         else:
             i += 1
 
@@ -121,10 +100,9 @@ def remove_by_index(s, index):
     return s_result
 
 
-def remove_by_substring(s, sub, start = 0, end = -1):
+def remove_by_substring(s, sub, start=0, end=-1):
     length_string = len(s)
     length_sub = len(sub)
-    s_result = ''
 
     if end < 0:
         end = length_string + end
@@ -137,7 +115,7 @@ def remove_by_substring(s, sub, start = 0, end = -1):
         start = length_string + start
 
     if start > end:
-        return 'ErrorIndex'
+        return None
 
     i = start
     find_index = -1
@@ -149,7 +127,7 @@ def remove_by_substring(s, sub, start = 0, end = -1):
         else:
             i += 1
     if find_index > 0:
-        s_result = s[0:find_index] +s[find_index+length_sub:]
+        s_result = s[0:find_index] + s[find_index+length_sub:]
     elif find_index == 0:
         s_result = s[length_sub:]
     else:
@@ -159,9 +137,9 @@ def remove_by_substring(s, sub, start = 0, end = -1):
 
 
 if __name__ == '__main__':
-    string = 'laaasaahjaaaanu'
-    print(substitute_into_string(string, 'ccc', 'aaa'))
-    print(break_up_string(string, 'aa'))
-    print(search_substring(string, 'an'))
+    string = 'laaasaaaahjaanu'
+    print(string_replace(string, 'ccc', 'aaa'))
+    print(string_split(string, 'aa'))
+    print(string_find(string, 'an'))
     print(remove_by_index(string, 13))
     print(remove_by_substring(string, 'la'))  
