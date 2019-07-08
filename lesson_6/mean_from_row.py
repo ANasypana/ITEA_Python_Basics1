@@ -4,22 +4,20 @@
 
 import pickle
 import re
-from saved_function import (sum_square_of_numbers, )
+from saved_function import sum_square_of_numbers
 
 
-def set_array_from(file):
+def set_array_from(data):
     result_array = []
-    with open(file, 'rb') as sent_array:
+    with open(data, 'rb') as sent_array:
         text = sent_array.read()
-    sent_array.close()
-    temporary_array = re.split(bytes('\n', 'utf8'), text)
+    text = str(text, 'utf8')
+    temporary_array = re.split('\n', text)
     for string in temporary_array:
-        list_of_number = re.split(bytes(' ', 'utf8'), string)
-        length = len(list_of_number)
-        sum_numbers = 0
-        for number in list_of_number:
-            sum_numbers += int(number)
-        result_array.append(sum_numbers / length)
+        list_of_number = re.split(' ', string)
+        quantity_numbers = len(list_of_number)
+        sum_numbers = sum(int(i) for i in list_of_number)
+        result_array.append(sum_numbers / quantity_numbers)
     return result_array
 
 
@@ -28,3 +26,4 @@ if __name__ == '__main__':
         new_function = pickle.load(saved_function)
 
     print(new_function(set_array_from('test3_result.txt')))
+    print(set_array_from('test3_result.txt'))

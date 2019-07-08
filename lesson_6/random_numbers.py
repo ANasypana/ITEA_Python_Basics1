@@ -10,7 +10,14 @@ def set_random_numbers(n=5):
 
 
 if __name__ == '__main__':
+    with open('test3_result.txt', 'w') as input_file:
+        pass
+    input_file.close()
 
-    with open('test3_result.txt', 'wb') as input_file:
-        input_file.write(bytes("\n".join(set_random_numbers() for i in range(100)), 'utf8'))
-        input_file.close()
+    for i in range(100):
+        with open('test3_result.txt', 'ab') as input_file:
+            if i < 99:
+                input_file.write(bytes(f'{set_random_numbers()}\n', 'utf8'))
+            else:
+                input_file.write(bytes(f'{set_random_numbers()}', 'utf8'))
+    input_file.close()

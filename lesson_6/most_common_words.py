@@ -35,9 +35,14 @@ def set_most_common_words(array):
     return glossary_num
 
 
+def make_string(array):
+    string = ", ".join(a for a in array)
+    return string
+
+
 if __name__ == '__main__':
 
-    with open(r'C:\Users\Alla\Desktop\Python\training\lesson_6\test1.txt', 'r') as working_text:
+    with open('test1.txt', 'r') as working_text:
         text = working_text.read()
         array = set_list_of_words(text)
         working_text.close()
@@ -48,11 +53,11 @@ if __name__ == '__main__':
 
     with open('test1_result.txt', 'w') as result_text:
         if length >= 5:
-            for i in range(5):
-                print(f'{citations[i]} citations - {glossary[citations[i]]}')
-                result_text.write(f'{citations[i]} citations: {glossary[citations[i]]}\n')
+            info = "\n".join(f'{citations[i]} citations - {make_string(glossary[citations[i]])}' for i in range(5))
+            print(info)
+            result_text.write(info)
         else:
-            for number in citations:
-                print(f'{citations[number]} citations - {glossary[citations[number]]}')
-                result_text.write(f'{citations[number]} citations: {glossary[citations[number]]}\n')
+            info = "\n".join(f'{citations[i]} citations - {make_string(glossary[citations[i]])}' for i in citations)
+            print(info)
+            result_text.write(info)
         result_text.close()

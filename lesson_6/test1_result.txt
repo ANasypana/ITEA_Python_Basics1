@@ -1,5 +1,5 @@
-22 citations: ['var']
-20 citations: ['the']
-11 citations: ['one']
-9 citations: ['of', 'is']
-8 citations: ['indentation', 'line', 'to', 'function', 'that']
+22 citations - var
+20 citations - the
+11 citations - one
+9 citations - of, is
+8 citations - indentation, line, to, function, that
