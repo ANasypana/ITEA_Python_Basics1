@@ -6,7 +6,7 @@ import pickle
 
 
 def sum_square_of_numbers(array):
-    sum_square = sum([int(number) ** 2 for number in array])
+    sum_square = sum(int(number) ** 2 for number in array)
     return sum_square
 
 
