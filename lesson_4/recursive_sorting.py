@@ -1,8 +1,8 @@
 #Напишите функцию, которая сортирует массив рекурсивно
-"""Hoare algorithm"""
 
 
 def recursive_sorting(array):
+    """Hoare algorithm"""
     length = len(array)
     if length <= 1:
         return array

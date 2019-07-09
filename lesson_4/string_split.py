@@ -33,7 +33,7 @@ if __name__ == '__main__':
     1.50348550
     """
     temporary_str = data.split("\n    ")
-    temporary_str = temporary_str[1:-1]
+    temporary_str = temporary_str[1: -1]
     array = []
     n = len(temporary_str) // 3
 

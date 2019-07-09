@@ -5,7 +5,7 @@
 
 import random
 import time
-from mydoc.subsidiary_functions import (enter_positive_number, )
+from mydoc.subsidiary_functions import enter_positive_number
 
 
 if __name__ == '__main__':

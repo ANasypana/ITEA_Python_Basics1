@@ -12,7 +12,7 @@ def string_replace(s, new, old, count=-1):
         count = length_string
 
     while i < length_string:
-        if (s[i:i + length_old] == old) and count > 0:
+        if s[i: i + length_old] == old and count > 0:
             s_result += new
             i += length_old
             count -= 1
@@ -31,9 +31,9 @@ def string_split(s, separator=' ',  count=-1):
     if count < 0:
         count = length_string
 
-    while (length_string > length_sep) and count > 0:
-        if s[i:i + length_sep] == separator:
-            array.append(s[0:i])
+    while length_string > length_sep and count > 0:
+        if s[i: i + length_sep] == separator:
+            array.append(s[0: i])
             s = s[i + length_sep:]
             length_string = len(s)
             count -= 1
@@ -43,7 +43,7 @@ def string_split(s, separator=' ',  count=-1):
     if count == 0:
         array.append(s)
     elif count > 0:
-        if s[0:length_sep] == separator:
+        if s[0: length_sep] == separator:
             array.append('')
             array.append(s[length_sep:])
         else:
@@ -56,7 +56,7 @@ def string_find(s, sub, start=0, end=-1):
     length_sub = len(sub)
 
     if end < 0:
-        end = length_string + end
+        end += length_string
     elif abs(end) > length_string:
         return -1
 
@@ -72,7 +72,7 @@ def string_find(s, sub, start=0, end=-1):
     find_index = -1
 
     while i <= end:
-        if s[i:i + length_sub] == sub:
+        if s[i: i + length_sub] == sub:
             find_index = i
             i = end + 1
         else:
@@ -121,13 +121,13 @@ def remove_by_substring(s, sub, start=0, end=-1):
     find_index = -1
 
     while i <= end:
-        if s[i:i + length_sub] == sub:
+        if s[i: i + length_sub] == sub:
             find_index = i
             i = end + 1
         else:
             i += 1
     if find_index > 0:
-        s_result = s[0:find_index] + s[find_index+length_sub:]
+        s_result = s[0: find_index] + s[find_index + length_sub:]
     elif find_index == 0:
         s_result = s[length_sub:]
     else:
