@@ -5,9 +5,9 @@ import random
 
 def sum_upper_elements(l):
     sum_elements = 0
-    row = len(l)
-    column = len(l[0])
-    min_value = min(row, column - 1)
+    len_row = len(l)
+    len_column = len(l[0])
+    min_value = min(len_row, len_column - 1)
     for i in range(min_value):
         sum_elements += sum(l[i][i + 1:])
     return sum_elements

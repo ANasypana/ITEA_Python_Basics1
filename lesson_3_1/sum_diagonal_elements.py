@@ -5,9 +5,9 @@ import random
 
 def sum_diagonal_elements(l):
     sum_elements = 0
-    row = len(l)
-    column = len(l[0])
-    min_value = min(column, row)
+    len_row = len(l)
+    len_column = len(l[0])
+    min_value = min(len_column, len_row)
 
     for i in range(min_value):
         sum_elements += l[i][i]

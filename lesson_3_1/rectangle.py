@@ -8,7 +8,7 @@ if __name__ == '__main__':
     second_pattern = sign + ' ' * (length_rectangle - 2) + sign
 
     for i in range(height_rectangle):
-        if i == 0 or i == (height_rectangle - 1):
+        if i == 0 or i == height_rectangle - 1:
             print(first_pattern)
         else:
             print(second_pattern)
