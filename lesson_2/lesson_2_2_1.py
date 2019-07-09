@@ -1,7 +1,7 @@
 # Выведите случайные числа в заданном пользователем диапазоне
 
 import random
-from mydoc.subsidiary_functions import (enter_diapason, )
+from mydoc.subsidiary_functions import enter_diapason
 
 
 if __name__ == '__main__':

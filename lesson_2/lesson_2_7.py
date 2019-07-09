@@ -1,7 +1,7 @@
 # Ввод цифр с клавиатуры до 0
 # Показать: количество чисел, которые были Введены; их общую сумму; среднее арифметическое
 
-from mydoc.subsidiary_functions import (enter_number_up_to, )
+from mydoc.subsidiary_functions import enter_number_up_to
 
 
 if __name__ == '__main__':

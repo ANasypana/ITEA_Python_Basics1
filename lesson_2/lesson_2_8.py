@@ -1,6 +1,6 @@
 # Найти сумму чисел числа 2 способами
 
-from mydoc.subsidiary_functions import (enter_positive_number, )
+from mydoc.subsidiary_functions import enter_positive_number
 
 
 if __name__ == '__main__':

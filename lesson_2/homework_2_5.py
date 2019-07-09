@@ -1,10 +1,10 @@
 # Вывести сумму всех делителей заданного числа
 
-from mydoc.subsidiary_functions import (enter_number, )
+from mydoc.subsidiary_functions import enter_positive_number
 
 
 if __name__ == '__main__':
-    data = enter_number('positive number')
+    data = enter_positive_number('positive number')
 
     sum_divisors = 0
     for i in range(2, data):

@@ -23,7 +23,7 @@ def enter_diapason(query):
     entered_data = entered_data.replace(' ', '')
     diapason = entered_data.split(",")
     length = len(diapason)
-    condition = (length == 2) and (diapason[0] != diapason[1])
+    condition = length == 2 and diapason[0] != diapason[1]
     if condition and diapason[0].isdigit() and diapason[1].isdigit():
         border_1 = min(int(diapason[0]), int(diapason[1]))
         border_2 = max(int(diapason[0]), int(diapason[1]))

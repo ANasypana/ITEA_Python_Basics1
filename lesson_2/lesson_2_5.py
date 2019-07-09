@@ -1,6 +1,6 @@
 # Напишите программу, которая выводит сумму введенных пользователем чисел. Числа вводятся одной строкой
 
-from mydoc.subsidiary_functions import (enter_list_of_numbers, )
+from mydoc.subsidiary_functions import enter_list_of_numbers
 
 
 if __name__ == '__main__':

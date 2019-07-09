@@ -1,6 +1,6 @@
 # Найти факториал числа
 
-from mydoc.subsidiary_functions import (enter_positive_number, )
+from mydoc.subsidiary_functions import enter_positive_number
 
 
 def factorial(a):

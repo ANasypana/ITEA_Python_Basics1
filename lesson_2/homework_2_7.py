@@ -1,7 +1,7 @@
 # Напишите программу “угадай число”
 
 import random
-from mydoc.subsidiary_functions import (enter_number_up_to, )
+from mydoc.subsidiary_functions import enter_number_up_to
 
 
 if __name__ == '__main__':

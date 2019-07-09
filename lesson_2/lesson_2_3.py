@@ -1,7 +1,7 @@
 # Извлекать квадратный корень из введенного пользователем числа до тех пор, пока значение больше 10
 
 import math
-from mydoc.subsidiary_functions import (enter_positive_number, )
+from mydoc.subsidiary_functions import enter_positive_number
 
 
 if __name__ == '__main__':
