@@ -1,5 +1,6 @@
 # checking functions
 
+import re
 
 def transfer_phone(number):
     number = str(number)
@@ -25,3 +26,17 @@ def is_name(name):
         return True
     else:
         return False
+
+
+def enter_name(query):
+    name = input(f'Enter {query}:\n')
+    while not is_name(name):
+        name = input(f'Error input. Enter only {query}:\n')
+    return name
+
+
+def enter_number(query):
+    number = input(f'Enter {query}:\n')
+    while not is_phone_number(number):
+        number = input(f'Error input. Enter only {query}:\n')
+    return number

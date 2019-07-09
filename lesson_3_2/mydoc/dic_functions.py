@@ -62,7 +62,7 @@ def count_digits(d):
         n = len(tem_phone)
 
         for i in range(2, n):
-            if tem_phone[i] == tem_phone[i-1] and tem_phone[i-1] == tem_phone[i-2] and str(tem_phone[1]).isdigit():
+            if tem_phone[i] == tem_phone[i-1] == tem_phone[i-2] and str(tem_phone[1]).isdigit():
                 temp = phone
                 for key, value in d.items():
                     if value == temp:
@@ -73,4 +73,4 @@ def count_digits(d):
         if i not in result:
             result.append(i)
 
-    return result             ##list of keys
+    return result
